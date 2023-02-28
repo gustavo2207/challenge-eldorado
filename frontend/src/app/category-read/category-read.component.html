@@ -1,0 +1,27 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col" colspan="2">Category</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="categories.length > 0; else listaVazia">
+    <tr *ngFor="let category of categories">
+      <td scope="row">{{ category.id }}</td>
+      <td>{{ category.name }}</td>
+      <td class="right">
+        <button
+          type="button"
+          class="btn btn-dark"
+          (click)="delete(category.name)"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #listaVazia>
+  <p>No category registered</p>
+</ng-template>

@@ -1,0 +1,31 @@
+<table class="table" id="read-device">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Category</th>
+      <th scope="col">Color</th>
+      <th scope="col" colspan="2">partNumber</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="devices.length > 0; else listaVazia">
+    <tr *ngFor="let device of devices">
+      <td scope="row">{{ device.id }}</td>
+      <td>{{ device.category?.name }}</td>
+      <td>{{ device.color }}</td>
+      <td>{{ device.part_number }}</td>
+      <td class="right">
+        <button
+          type="button"
+          class="btn btn-dark"
+          (click)="delete(device.part_number.toString())"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #listaVazia>
+  <p>No device registered</p>
+</ng-template>

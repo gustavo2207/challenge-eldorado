@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  padding: 0;
+  margin: 0;
+  vertical-align: baseline;
+  list-style: none;
+  border: 0;
+}
+
+.right {
+  text-align: end;
+}
+.mg-bt-2 {
+  margin-bottom: 2rem;
+}

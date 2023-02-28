@@ -1,0 +1,51 @@
+<form (ngSubmit)="add()">
+  <label for="category" class="form-label">Categories Available</label>
+  <div class="input-group">
+    <input
+      class="form-control"
+      list="datalistOptions"
+      name="deviceCategory"
+      placeholder="Type to search your category ..."
+      required
+      [(ngModel)] = "deviceCategory"
+    />
+    <datalist id="datalistOptions">
+      <option
+        *ngFor="let category of categories"
+        value="{{ category.name }}"
+      ></option>
+    </datalist>
+  </div>
+  <label for="color" class="form-label mt-2">Color</label>
+  <div class="input-group">
+    <input
+      type="text"
+      class="form-control"
+      name="color"
+      placeholder="Must be 3-16 characters."
+      maxlength="16"
+      pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$"
+      required
+      [(ngModel)] = "color"
+    />
+  </div>
+  <label for="partNumber" class="form-label mt-2">Part Number</label>
+  <div class="input-group">
+    <input
+      type="number"
+      class="form-control"
+      name="partNumber"
+      placeholder="Insert a Part Number"
+      min="0"
+      pattern="/^\d+$/"
+      required
+      [(ngModel)] = "partNumber"
+    />
+  </div>
+  <button
+    type="submit"
+    class="btn btn-dark mt-2"
+  >
+    Submit
+  </button>
+</form>

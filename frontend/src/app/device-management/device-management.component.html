@@ -1,0 +1,26 @@
+<div class="position-relative mg-bt-30" id="btn-device">
+  <div align="center" class="mg-bt-2" id="group-btn">
+    <div class="col-12 btn-margin">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <a type="button" class="btn btn-dark" routerLink="createDevice">
+          Create
+        </a>
+        <a type="button" class="btn btn-dark" routerLink="readDevice"> Read </a>
+      </div>
+    </div>
+  </div>
+  <a
+    type="button"
+    class="btn btn-dark position-absolute top-10 end-20"
+    routerLink="../category/createCategory"
+  >
+    Create new category
+  </a>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-9">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

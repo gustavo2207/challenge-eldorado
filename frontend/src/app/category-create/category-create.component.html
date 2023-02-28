@@ -1,0 +1,22 @@
+<form (submit)="add()">
+  <label for="categoryName" class="form-label mt-2">Category name</label>
+  <div class="input-group">
+    <input
+      type="text"
+      id="categoryName"
+      class="form-control"
+      name="categoryName"
+      placeholder="Insert a category name"
+      maxlength="128"
+      pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$"
+      required
+      [(ngModel)] = "categoryName"
+    />
+  </div>
+  <button
+    type="submit"
+    class="btn btn-dark mt-2"
+  >
+    Submit
+  </button>
+</form>
